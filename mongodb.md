@@ -24,15 +24,16 @@
 
 - Schema Quan hệ 1:1, 1:N, N:N
 
+## Mongoose 
+- Mongoose là một Object Data Modeling (ODM) cho Node.js và MongoDB. Nó cho phép chúng ta tương tác với database thông qua các đối tượng JavaScript. Mongoose sử dụng các schema để định nghĩa cấu trúc của các document trong database. Mongoose cũng hỗ trợ các tính năng như validation, middleware, hooks, virtuals, indexes, inheritance, và các tính năng khác.
+
 ## SQL and NoSQL
-
-
 
 |             | SQL     | NoSQL       |
 | :---        |    :----:   |          ---: |
 |**Hiệu Xuất**| Kém hơn NoSQL vì khi truy vấn nó phải tính toán, kiểm tra và sử lý các mối quan hệ ràng buộc       | Tốt hơn SQL vì bỏ qua các ràng buộc     |
 | **Mở rộng theo chiều ngang**   | Có thể thực hiện được nhưng. Quá trình mở rộng sẽ rất phức tập nếu đã tồn tại dữ liệu trong database        | Mở Rộng dễ dàng      |
-| **Tốc đố read/write**   | Kém hơn NoSQL  vì phải đảm bảo tính ràng buộc giữa các bảng. Nếu sử dụng nhiều server thì phải bảo toàn tính nhất quán về dữ liệu ở các server với nhau        |  Tố độ nhanh hơn SQL vì bỏ qiua các cơ cế ràng buộc của cá bảng. Vì dữ liệu dược lưu trong Ram, Sau đó mới đẩy xuống HĐ và nó tính nất quán cuối      |
+| **Tốc đố read/write**   | Kém hơn NoSQL  vì phải đảm bảo tính ràng buộc giữa các bảng. Nếu sử dụng nhiều server thì phải bảo toàn tính nhất quán về dữ liệu ở các server với nhau        |  Tố độ nhanh hơn SQL vì bỏ qua các cơ cế ràng buộc của cá bảng. Vì dữ liệu dược lưu trong Ram, Sau đó mới đẩy xuống HĐ và nó tính nất quán cuối      |
 | **Phần cứng**   | Đòi hỏi phần cứng cao        | Không đòi hỏi quá nhiều phần cứng      |
 | **Thay Đổi số node trong hệ thống**   | Vì tính nhất quán về dữ liệu nên khi thêm hay xóa 1 node cần phải shutdown hệ thống trong một khoảng thời gian        | Vì tính nhất quán cuối nên sẽ không cần phải shutdown hệ thống      |
 | **Truy vấn và báo cáo**   | Dễ dàng sử dụng ngôn ngữ SQL query để truy vấn trực tiếp dữ liệu từ database hoặc dùng công cụ hỗ trợ để lấy báo cáo         | Việc lấy báo cáo dữ liệu trực tiếp từ NoSQL chưa được hỗ trợ tốt, thực hiện chủ yêu thông qua giao diện ứng dụng      |
@@ -138,8 +139,8 @@ AccountModel.create({
 Account.updateMany({username: 'nodemy'},{password: 112},{password: '456'}).then(data=>{console.log(data)})
 
 - **updateOne**
-
-
+- **delete**
+- **deleteOne**
 
 ## **Aggregation**
 
@@ -147,6 +148,8 @@ Account.updateMany({username: 'nodemy'},{password: 112},{password: '456'}).then(
 
 - Aggregation là một trong những tính năng nổi bật và quan trọng trong việc tính toán xử lý dữ liệu trong mongoDb mà hầu hết các hệ thống hiện nay đang dùng. Nắm vững Aggregation Framework khiến chúng ta dễ dàng thao tác xử lý một cách đơn giản data với MongoDB.
 
+> // chọn những file muốn ra. 
+>db.Customer.aggregate( [ { $project : { address : 1 , city : 1 , state: 1 } } ] )
 ## **Populate**
 
 - viết câu lệnh populate(Trường nào)
@@ -188,4 +191,16 @@ Chỉ mục (Index) là các cấu trúc dữ liệu đặc biệt, lưu giữ m
 
 - **create Index**
 
->db.COLLECTION_NAME.ensureIndex({KEY:1})
+>db.nember.createindex({email:1})
+
+## **Object ID**
+
+- 12 bytes (24 hexadecimal character)
+- contain a 4-byte timestamp value + 5-bye random value +3-bye incrementing counter
+- when a document is created, _id is automatically assigned with a new ObjectId
+- Method: 
+- getTimestamp
+- valueOf
+- toString
+- Properties
+- Str

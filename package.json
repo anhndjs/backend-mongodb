@@ -1,0 +1,25 @@
+{
+  "name": "backend-mongodb",
+  "version": "1.0.0",
+  "description": "mongo-learning",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anhndjs/backend-mongodb.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anhndjs/backend-mongodb/issues"
+  },
+  "homepage": "https://github.com/anhndjs/backend-mongodb#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "faker": "^5.5.3",
+    "mongoose": "^6.7.2"
+  }
+}
