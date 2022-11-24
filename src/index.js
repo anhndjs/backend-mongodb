@@ -32,7 +32,7 @@ app.use('/api/v1/url', urlRouter);
 (async () => {
   await connectDB();
   await redis.connect();
-  // await createAuthors();
-  // await createBook();
-  // await getBook('6374548019e0909da0cfd1f7');
+  await createAuthors();
+  await createBook();
+  await getBook('6374548019e0909da0cfd1f7');
 })();
