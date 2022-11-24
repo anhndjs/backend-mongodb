@@ -203,4 +203,4 @@ Chỉ mục (Index) là các cấu trúc dữ liệu đặc biệt, lưu giữ m
 - valueOf
 - toString
 - Properties
-- Str
+- Str.
