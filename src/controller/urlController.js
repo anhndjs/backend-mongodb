@@ -19,13 +19,11 @@ async function createUrl(req, res) {
     await redis.set('aaa', 100);
 
     // const valueInRedis = await redis.get('aaa');
+    // const deletes = await redis.del('aaa');
+    // console.log(deletes);
 
-    const deletes = await redis.del('aaa');
-
-    console.log(deletes);
-
-    // const url = await Url.create({ short: shortUrl, clicks: foundUrl });
-    // res.status(200).json({ isSuccess: true, url });
+    const url = await Url.create({ short: shortUrl, clicks: foundUrl });
+    res.status(200).json({ isSuccess: true, url });
   } catch (error) {
     throw new Error(error.message);
   }
