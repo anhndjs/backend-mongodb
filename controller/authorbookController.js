@@ -1,7 +1,7 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 const { faker } = require('@faker-js/faker');
 const _ = require('lodash');
-const Author = require('../models/authorModel');
+// const Author = require('../models/authorModel');
 
 async function createAuthors() {
   try {

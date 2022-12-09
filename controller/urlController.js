@@ -2,9 +2,7 @@ const { trusted } = require('mongoose');
 const shortid = require('shortid');
 const { Url } = require('../models');
 
-const { redis } = require('../redis/connect');
-
-async function createUrl(req, res) {
+async function createUrl(req, res, next) {
   try {
     const foundUrl = req.body.full;
     if (!foundUrl) {
@@ -16,13 +14,7 @@ async function createUrl(req, res) {
 
     const shortUrl = shortid.generate();
 
-    await redis.set('aaa', 100);
-
-    // const valueInRedis = await redis.get('aaa');
-    // const deletes = await redis.del('aaa');
-    // console.log(deletes);
-
-    const url = await Url.create({ short: shortUrl, clicks: foundUrl });
+    const url = await Url.create({ short: shortUrl, full: foundUrl });
     res.status(200).json({ isSuccess: true, url });
   } catch (error) {
     throw new Error(error.message);

@@ -9,6 +9,6 @@ router.route('/:id')
 router
   .route('/')
   .post(urlController.createUrl);
-// router.route('/link/:shortlink')
-//   .get(authorsController.protect, urlController.getLink);
+router.route('/:shortUrls');
+// .get(authorsController.Protect, urlController.getUrl);
 module.exports = router;

@@ -1,25 +1,36 @@
 {
-  "name": "backend-mongodb",
+  "name": "quizz4_backend",
   "version": "1.0.0",
-  "description": "mongo-learning",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/anhndjs/backend-mongodb.git"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/anhndjs/backend-mongodb/issues"
-  },
-  "homepage": "https://github.com/anhndjs/backend-mongodb#readme",
   "dependencies": {
+    "bcrypt": "^5.1.0",
+    "bcryptjs": "^2.4.3",
+    "chai": "^4.3.7",
     "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-rate-limit": "^6.7.0",
     "faker": "^5.5.3",
-    "mongoose": "^6.7.2"
+    "http-errors": "^2.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.21",
+    "mailgun-js": "^0.22.0",
+    "mongoose": "^6.7.2",
+    "nodemailer": "^6.8.0",
+    "nodemon": "^2.0.20",
+    "passport": "^0.6.0",
+    "passport-jwt": "^4.0.0",
+    "redis": "^4.5.0",
+    "shortid": "^2.2.16",
+    "sinon": "^14.0.2",
+    "validator": "^13.7.0"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^7.6.0"
   }
 }

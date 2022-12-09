@@ -16,6 +16,7 @@
 
 - **what is redis**
 
+- redis => remote dictionary Server
 - redis is an open source, BDS licensed advancced key-value store
 
 - an in-memory key-value store, with persistence 
